@@ -3,6 +3,7 @@ const hbs=require("hbs");
 
 const path=require("path");
 const app=express();
+const port= process.env.PORT || 3000;
 // path for the views
 const viewPath=path.join(__dirname,"/templete/views");
 const publicPath=path.join(__dirname,"/src/public");
@@ -39,8 +40,8 @@ app.get("*",(req,res)=>{
 res.send("404 page not found");
 })
 
-app.listen(3000,()=>
+app.listen(port,()=>
 {
-    console.log("server is up");
+    console.log("server is up" + port);
     
 });
